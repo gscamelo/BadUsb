@@ -1,22 +1,8 @@
 /*
 
 Author:
-  Gilson Camelo | @gscamelo
+  Gilson Camelo | Twitter: @GSCAMELO 
 
-Description:
-
-  This script is just a reuse and refinement for BLERemoteKeyboard.ino default example
-
-  payloadA() {}
-    Once you press button A, the following happens:
-    - Press 'Win+R' to open run window
-    - Write 'notepad' to open notepad
-    - Write a string in opned notepad
-
-  payloadB() {}
-    Once you press button B, the following happens:
-    - Write a string in the opned notepad
-    - If you keep pressing, the same string will be appended repeatedly.
 */
 
 #include <NinjaKeyboard.h>
